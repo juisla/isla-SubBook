@@ -37,7 +37,6 @@ public class SubBook extends AppCompatActivity {
                 Intent AddSubIntent = new Intent(getApplicationContext(),AddSub.class);
                 AddSubIntent.putExtra("sublist", sublist);
                 startActivity(AddSubIntent);
-                adapter.notifyDataSetChanged();
             }
         });
 

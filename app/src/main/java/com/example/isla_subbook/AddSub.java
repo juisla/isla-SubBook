@@ -22,13 +22,14 @@ public class AddSub extends AppCompatActivity {
     private EditText monthlychargeText;
     private EditText commentText;
 
-    public ArrayList<Subscription> sublist = (ArrayList<Subscription>) getIntent().getSerializableExtra("sublist");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_sub);
 
+        /*
         nameText = (EditText) findViewById(R.id.nameEntry);
         dateText = (EditText) findViewById(R.id.dateEntry);
         monthlychargeText = (EditText) findViewById(R.id.monthlychargeEntry);
@@ -62,6 +63,7 @@ public class AddSub extends AppCompatActivity {
             }
         });
 
-
+    */
     }
+
 }
