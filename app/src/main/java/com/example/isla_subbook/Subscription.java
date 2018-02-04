@@ -10,28 +10,28 @@ import java.util.Date;
 public class Subscription {
 
     private String name;
-    private Date date;
-    private Float monthlycharge;
+    private String date;
+    private String monthlycharge;
     private String comment;
 
     Subscription(){
 
     }
 
-    public Subscription(String name, Date date, Float monthlycharge){
+    public Subscription(String name, String date, String monthlycharge){
         this.name = name;
         this.date = date;
         this.monthlycharge = monthlycharge;
     }
 
-    public Subscription(String name, Date date, Float monthlycharge, String comment){
+    public Subscription(String name, String date, String monthlycharge, String comment){
         this.name = name;
         this.date = date;
         this.monthlycharge = monthlycharge;
         this.comment = comment;
     }
 
-    public Date getDate(){
+    public String getDate(){
         return date;
     }
 
@@ -39,7 +39,7 @@ public class Subscription {
         return name;
     }
 
-    public Float getMonthlycharge(){
+    public String getMonthlycharge(){
         return monthlycharge;
     }
 
@@ -51,11 +51,11 @@ public class Subscription {
         this.name = name;
     }
 
-    public void setDate(Date date){
+    public void setDate(String date){
         this.date = date;
     }
 
-    public void setMonthlycharge(Float monthlycharge){
+    public void setMonthlycharge(String monthlycharge){
         this.monthlycharge = monthlycharge;
     }
 

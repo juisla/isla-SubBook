@@ -1,5 +1,7 @@
 package com.example.isla_subbook;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,19 +19,57 @@ import java.util.Locale;
 
 public class AddSub extends AppCompatActivity {
 
-    private EditText nameText;
-    private EditText dateText;
-    private EditText monthlychargeText;
-    private EditText commentText;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_sub);
 
-        /*
+        Button confirmAddBtn = (Button) findViewById(R.id.confirmAddBtn);
+        final EditText nameText = (EditText) findViewById(R.id.nameEntry);
+        final EditText dateText = (EditText) findViewById(R.id.dateEntry);
+        final EditText monthlychargeText = (EditText) findViewById(R.id.monthlychargeEntry);
+        final EditText commentText = (EditText) findViewById(R.id.commentEntry);
+
+        confirmAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*
+                DateFormat dateformat = new SimpleDateFormat("YYYY/MM/dd", Locale.CANADA);
+                Date date = null;
+                try {
+                    date = dateformat.parse(datestring);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                String monthlychargestring = monthlychargeText.getText().toString();
+                Float monthlycharge = Float.valueOf(monthlychargestring);
+                */
+                Intent intent = new Intent();
+                intent.putExtra("newName", nameText.getText().toString());
+                intent.putExtra("newDate", dateText.getText().toString());
+                intent.putExtra("newMonthlycharge", monthlychargeText.getText().toString());
+                intent.putExtra("newComment", commentText.getText().toString());
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+
+            }
+        });
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+ /*
         nameText = (EditText) findViewById(R.id.nameEntry);
         dateText = (EditText) findViewById(R.id.dateEntry);
         monthlychargeText = (EditText) findViewById(R.id.monthlychargeEntry);
@@ -64,6 +104,3 @@ public class AddSub extends AppCompatActivity {
         });
 
     */
-    }
-
-}
