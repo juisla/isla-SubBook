@@ -1,19 +1,13 @@
 package com.example.isla_subbook;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import android.app.Activity;
-
 /**
  * Created by JC on 2/3/2018.
  */
@@ -23,10 +17,10 @@ public class SubAdapter extends BaseAdapter {
     LayoutInflater mInflater;
     private ArrayList<String> names;
     private ArrayList<String> dates;
-    private ArrayList<String> prices;
+    private ArrayList<Double> prices;
     private ArrayList<String> comments;
 
-    public SubAdapter(Context c, ArrayList<String> n, ArrayList<String> d, ArrayList<String> p, ArrayList<String> o){
+    public SubAdapter(Context c, ArrayList<String> n, ArrayList<String> d, ArrayList<Double> p, ArrayList<String> o){
         names = n;
         dates = d;
         prices = p;
@@ -61,12 +55,12 @@ public class SubAdapter extends BaseAdapter {
 
         String name = names.get(position);
         String date = dates.get(position);
-        String price = prices.get(position);
+        Double price = prices.get(position);
         String comment = comments.get(position);
 
         nameView.setText(name);
         dateView.setText(date);
-        priceView.setText(price);
+        priceView.setText(String.format("%.2f", price));
         commentView.setText(comment);
 
         return v;

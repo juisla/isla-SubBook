@@ -1,7 +1,6 @@
 package com.example.isla_subbook;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,13 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.lang.reflect.Array;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
 
 public class AddSub extends AppCompatActivity {
 
@@ -30,29 +22,25 @@ public class AddSub extends AppCompatActivity {
         final EditText monthlychargeText = (EditText) findViewById(R.id.monthlychargeEntry);
         final EditText commentText = (EditText) findViewById(R.id.commentEntry);
 
+
         confirmAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
-                DateFormat dateformat = new SimpleDateFormat("YYYY/MM/dd", Locale.CANADA);
-                Date date = null;
-                try {
-                    date = dateformat.parse(datestring);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                String name = nameText.getText().toString();
+                String date = dateText.getText().toString();
+                Double monthlycharge = Double.valueOf(monthlychargeText.getText().toString());
+                String comment = commentText.getText().toString();
 
-                String monthlychargestring = monthlychargeText.getText().toString();
-                Float monthlycharge = Float.valueOf(monthlychargestring);
-                */
+                Subscription sub = new Subscription(name, date, monthlycharge, comment);
+
                 Intent intent = new Intent();
-                intent.putExtra("newName", nameText.getText().toString());
-                intent.putExtra("newDate", dateText.getText().toString());
-                intent.putExtra("newMonthlycharge", monthlychargeText.getText().toString());
-                intent.putExtra("newComment", commentText.getText().toString());
+                intent.putExtra("newSub", sub);
+                intent.putExtra("newName", sub.getName());
+                intent.putExtra("newDate", sub.getDate());
+                intent.putExtra("newMonthlycharge", sub.getMonthlycharge());
+                intent.putExtra("newComment", sub.getComment());
                 setResult(Activity.RESULT_OK, intent);
                 finish();
-
             }
         });
     }

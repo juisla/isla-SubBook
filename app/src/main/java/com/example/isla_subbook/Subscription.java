@@ -1,30 +1,19 @@
 package com.example.isla_subbook;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by isla on 1/31/18.
  */
 
-public class Subscription {
+public class Subscription implements Serializable{
 
     private String name;
     private String date;
-    private String monthlycharge;
+    private Double monthlycharge;
     private String comment;
 
-    Subscription(){
-
-    }
-
-    public Subscription(String name, String date, String monthlycharge){
-        this.name = name;
-        this.date = date;
-        this.monthlycharge = monthlycharge;
-    }
-
-    public Subscription(String name, String date, String monthlycharge, String comment){
+    public Subscription(String name, String date, Double monthlycharge, String comment){
         this.name = name;
         this.date = date;
         this.monthlycharge = monthlycharge;
@@ -39,7 +28,7 @@ public class Subscription {
         return name;
     }
 
-    public String getMonthlycharge(){
+    public Double getMonthlycharge(){
         return monthlycharge;
     }
 
@@ -55,7 +44,7 @@ public class Subscription {
         this.date = date;
     }
 
-    public void setMonthlycharge(String monthlycharge){
+    public void setMonthlycharge(Double monthlycharge){
         this.monthlycharge = monthlycharge;
     }
 

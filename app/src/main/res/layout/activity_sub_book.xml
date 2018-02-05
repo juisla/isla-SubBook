@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="97dp"
-        android:layout_height="25dp"
+        android:layout_width="135dp"
+        android:layout_height="39dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Subscriptions"
+        android:text=" Subscriptions \n (Tap to View/Edit)"
         android:textSize="14sp"
         android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,7 +21,7 @@
     <ListView
         android:id="@+id/oldsublist"
         android:layout_width="345dp"
-        android:layout_height="377dp"
+        android:layout_height="342dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,7 +31,7 @@
 
     <Button
         android:id="@+id/AddSubBtn"
-        android:layout_width="108dp"
+        android:layout_width="323dp"
         android:layout_height="52dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -39,6 +39,26 @@
         android:textIsSelectable="false"
         android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/totalcost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="0.00"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/oldsublist" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Total Monthly Cost:"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldsublist" />
 
 </android.support.constraint.ConstraintLayout>
