@@ -9,11 +9,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 /**
- * Created by JC on 2/3/2018.
+ * Created by Julian Isla on 2/3/2018.
+ * Custom adapter to display attributes of Subscription class in a Listview
+ * implementation idea from android studio list tutorial video https://www.youtube.com/watch?v=rdGpT1pIJlw
  */
 
 public class SubAdapter extends BaseAdapter {
 
+
+    ///each array is an attribute from the Subscription class, displayed on a different text view
     LayoutInflater mInflater;
     private ArrayList<String> names;
     private ArrayList<String> dates;
@@ -28,6 +32,7 @@ public class SubAdapter extends BaseAdapter {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    ///default methods
     @Override
     public int getCount() {
        return names.size();
@@ -43,6 +48,10 @@ public class SubAdapter extends BaseAdapter {
         return position;
     }
 
+    /**
+     * set TextViews to display corresponding attributes
+     * attribute fields are from provided arraylists
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

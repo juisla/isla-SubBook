@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 /**
  * Created by isla on 1/31/18.
+ * Subscription class for 301 Assignment 1
+ * constructor takes a name, date, monthlycharge, and comment
+ * includes getter and setter methods
  */
 
 public class Subscription implements Serializable{

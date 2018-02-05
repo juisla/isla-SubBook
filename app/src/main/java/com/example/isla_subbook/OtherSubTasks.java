@@ -8,6 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+/**
+ * OtherSubTasks class used to handle a list item click from SubBook
+ * takes position value to modify arraylists at the position of the item
+ * that was clicked
+ * display the values of clicked item to view details of subscription
+ * then take any changes and pass them back to SubBook to be modified
+ */
+
 public class OtherSubTasks extends AppCompatActivity {
 
     @Override
@@ -32,6 +40,13 @@ public class OtherSubTasks extends AppCompatActivity {
         editMonthlycharge.setText(String.format("%.2f", subCharge));
         editComment.setText(subComment);
 
+        /*
+         * Edit Subscription Button
+         * takes the values currently in the EditText's
+         * and passes them through intents back to SubBook with activity result 10
+         * and a position value to edit arrayLists at position
+         */
+
         Button EditBtn = (Button) findViewById(R.id.EditSubBtn);
         EditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +69,13 @@ public class OtherSubTasks extends AppCompatActivity {
 
             }
         });
+
+        /*
+         * Delete Subscription Button
+         * returns position to SubBook so it can delete values at position
+         * in the arraylists
+         * returns activity result 20
+         */
 
         Button DeleteBtn = (Button) findViewById(R.id.DeleteSubBtn);
         DeleteBtn.setOnClickListener(new View.OnClickListener() {

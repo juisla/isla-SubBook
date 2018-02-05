@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * AddSub class used to handle a button press from SubBook
+ * Edittexts to fill in fields of information to display in SubBook
+ * create new Subscription object with the information entered
+ * then pass intents back with result from activity
+ */
 
 public class AddSub extends AppCompatActivity {
 
@@ -34,6 +40,10 @@ public class AddSub extends AppCompatActivity {
                 Subscription sub = new Subscription(name, date, monthlycharge, comment);
 
                 Intent intent = new Intent();
+                /*
+                 * referenced https://stackoverflow.com/questions/2736389/how-to-pass-an-object-from-one-activity-to-another-on-android
+                 * to pass object of custom class through intent
+                 */
                 intent.putExtra("newSub", sub);
                 intent.putExtra("newName", sub.getName());
                 intent.putExtra("newDate", sub.getDate());
@@ -46,49 +56,3 @@ public class AddSub extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
- /*
-        nameText = (EditText) findViewById(R.id.nameEntry);
-        dateText = (EditText) findViewById(R.id.dateEntry);
-        monthlychargeText = (EditText) findViewById(R.id.monthlychargeEntry);
-        commentText = (EditText) findViewById(R.id.commentEntry);
-
-        Button confirmAddBtn = (Button) findViewById(R.id.confirmAddBtn);
-        confirmAddBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setResult(RESULT_OK);
-                String name = nameText.getText().toString();
-
-                String datestring = dateText.getText().toString();
-                DateFormat dateformat = new SimpleDateFormat("YYYY/MM/dd", Locale.CANADA);
-                Date date = null;
-                try {
-                    date = dateformat.parse(datestring);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-                String monthlychargestring = monthlychargeText.getText().toString();
-                Float monthlycharge = Float.valueOf(monthlychargestring);
-
-                String comment = commentText.getText().toString();
-
-                Subscription newsub = new Subscription(name, date, monthlycharge, comment);
-
-                sublist.add(newsub);
-
-            }
-        });
-
-    */
